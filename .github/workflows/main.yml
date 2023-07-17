@@ -2,10 +2,8 @@ name: New Release
 
 on:
   push:
-    branches:
-    - "main"
     tags:
-    - '*'
+    - '*.*.*'
 
 jobs:
   build:
@@ -32,12 +30,14 @@ jobs:
       - name: Set Version
         id: set-version
         run: echo "VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> "$GITHUB_OUTPUT"
-      - name: Get color
+      
+      - name: Extract release notes
+        id: extract-release-notes
+        uses: ffurrer2/extract-release-notes@v1
 
-        run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "ldap-msad-user-sid-mapper.jar,README.md,LICENSE"
-          body: "New test release"
+          body: ${{ steps.extract-release-notes.outputs.release_notes }}
           draft: true
           tag: ${{ steps.set-version.outputs.VERSION }}
