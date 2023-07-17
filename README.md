@@ -1,2 +1,3 @@
-# keycloak-template-attribute-importer
-keycloak-template-attribute-importer is an extension for Keycloak allowing you to import NAMEID and ALIAS to attributes
+# keycloak-msad-user-sid-mapper
+
+A keycloak extension to get the SID from Active directory LDAP.
