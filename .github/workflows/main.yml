@@ -9,10 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Connect to PostgreSQL
-        run: ls
-      # - name: Checkout 
-      #   uses: actions/checkout@v2 # Required to mount the Github Workspace to a volume 
+      - name: Check out the repo
+        uses: actions/checkout@v3
       - uses: addnab/docker-run-action@v3
         with:
           # username: ${{ secrets.DOCKER_USERNAME }}
