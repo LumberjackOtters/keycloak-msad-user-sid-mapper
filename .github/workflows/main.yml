@@ -17,6 +17,6 @@ jobs:
           # password: ${{ secrets.DOCKER_PASSWORD }}
           # registry: gcr.io
           image: maven:3-openjdk-11
-          options: -v ${{ github.workspace }}:/usr/src/mymaven
+          options: -v ${{ github.workspace }}:/usr/src/mymaven:rw
           run: |
             mvn clean install
