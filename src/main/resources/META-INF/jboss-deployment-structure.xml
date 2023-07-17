@@ -1,0 +1,13 @@
+<jboss-deployment-structure>
+    <deployment>
+        <dependencies>
+            <module name="org.keycloak.keycloak-core"/>
+            <module name="org.keycloak.keycloak-server-spi"/>
+            <module name="org.keycloak.keycloak-server-spi-private"/>
+            <module name="org.apache.commons.codec" />
+            <module name="org.keycloak.keycloak-kerberos-federation"/>
+            <module name="org.keycloak.keycloak-ldap-federation"/>
+            <module name="org.jboss.logging"/>
+        </dependencies>
+    </deployment>
+</jboss-deployment-structure>
