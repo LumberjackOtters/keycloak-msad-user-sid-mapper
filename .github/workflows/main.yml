@@ -20,3 +20,9 @@ jobs:
           options: -v ${{ github.workspace }}:/usr/src/mymaven:rw -w /usr/src/mymaven
           run: |
             mvn clean install
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "ldap-msad-user-sid-mapper.jar,README.md,LICENSE"
+          body: "NEw test release"
+          draft: true
+          tag: 1.0.0
